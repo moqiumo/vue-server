@@ -17,7 +17,7 @@ axios.interceptors.request.use(config => {
   // console.log(config)
   return config
 })
-Vue.prototype.$axios = axios;//把axios挂载到vue上
+Vue.prototype.$http = axios;//把axios挂载到vue上
 
 
 Vue.use(ElementUI)

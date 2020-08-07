@@ -51,12 +51,12 @@
       login() {
         this.$refs.loginFormRef.validate(async valid => {
           if (!valid) return
-          const { data: res } = await this.$http.post('login', this.loginForm)
-          // console.log(res)
-          if (res.meta.status !== 200) return this.$message.error('登陆失败')
+          const { data: res } = await this.$http.post('user/login', this.loginForm)
+          console.log(res)
+          if (res.code !== 200) return this.$message.error('登陆失败')
           this.$message.success('登陆成功')
           // 将登陆成功token保存到客户端的sessionStorage
-          window.sessionStorage.setItem('token', res.data.token)
+          window.sessionStorage.setItem('token', res.data)
           this.$router.push('/home')
         })
       }
