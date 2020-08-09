@@ -12,11 +12,11 @@ import './assets/global.css'
 
 import axios from 'axios'//引入axios
 axios.defaults.baseURL = 'http://127.0.0.1:8080/'//配置的请求根路径
-axios.interceptors.request.use(config => {
-  config.headers.Authorization = window.sessionStorage.getItem('token')
-  // console.log(config)
-  return config
-})
+// axios.interceptors.request.use(config => {
+//   config.headers.Authorization = window.sessionStorage.getItem('token')
+//   // console.log(config)
+//   return config
+// })
 Vue.prototype.$http = axios;//把axios挂载到vue上
 
 
