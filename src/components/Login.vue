@@ -29,7 +29,7 @@
       return {
         loginForm: {
           username: 'admin',
-          password: '123456'
+          password: 'chenlei123'
         },
         loginFormRelus: {
           username: [
@@ -51,7 +51,7 @@
       login() {
         this.$refs.loginFormRef.validate(async valid => {
           if (!valid) return
-          const { data: res } = await this.$http.post('user/login', this.loginForm)
+          const { data: res } = await this.$http.post('tga/login', this.loginForm)
           console.log(res)
           if (res.code !== 200) return this.$message.error('登陆失败')
           this.$message.success('登陆成功')
